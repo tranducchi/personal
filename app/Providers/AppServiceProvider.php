@@ -2,8 +2,13 @@
 
 namespace App\Providers;
 
+
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Laravel\Passport\Passport;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
-        Passport::routes();
+
     }
 
     /**

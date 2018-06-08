@@ -20,3 +20,12 @@ body{
     top:50%;
     margin-top:-86px;
 }
+.list-cat{
+    background:white;
+    width:700px;
+    height: auto;
+    top: 200px;
+    left:50%;
+    margin-left:-350px;
+    position: absolute;
+}

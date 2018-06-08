@@ -18,9 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('form', function(){
-    return view('form');
-});
+Route::get('form/create', 'CatController@create');
 Route::resource('form', 'CatController')->only([
     'index', 'store'
 ]);

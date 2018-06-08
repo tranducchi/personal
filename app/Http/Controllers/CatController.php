@@ -15,7 +15,9 @@ class CatController extends Controller
     public function index()
     {
         //
-        return view('form');
+        $data = Cat::select('name', 'id', 'updated_at')->paginate('4');
+        
+        return view('list', compact('data'));
     }
 
     /**
@@ -25,7 +27,7 @@ class CatController extends Controller
      */
     public function create()
     {
-        //
+         return view('form');
     }
 
     /**
@@ -36,12 +38,13 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
         $cat = new Cat;
 
         $cat->name = $request->cat_name;
 
         $cat->save();
+
         return back()->with("ok","Add success");
     }
 
